@@ -8,6 +8,8 @@ This project used Code First.
 
 Only domain layer unit tests covered.
 
+To Explore The API go to /swagger
+
 Stack: .Net Core 3.1, Angular 9, MySQL
 
 ### Getting Started 🚀
