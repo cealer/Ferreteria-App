@@ -1,0 +1,78 @@
+<div class="mat-elevation-z8">
+  <br>
+  <button class="new-button-style" color="primary" (click)="openProductModal()" mat-raised-button>Nuevo</button>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="search-full-width">
+        <mat-label>Filtro por Código o Nombre</mat-label>
+        <input matInput (keyup)="applyFilter($event)">
+      </mat-form-field>
+    </div>
+    <div class="col" class="button-full-width">
+      <button class="button-style" mat-raised-button (click)="search()" color="accent" type="button">Buscar</button>
+    </div>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Código</th>
+      <td mat-cell *matCellDef="let row">{{row.code}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Descripción</th>
+      <td mat-cell *matCellDef="let row">{{row.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Categoría</th>
+      <td mat-cell *matCellDef="let row">{{row.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
+      <td mat-cell *matCellDef="let row">{{row.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Stock</th>
+      <td mat-cell *matCellDef="let row">{{row.stock}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="options">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="Update(row)">
+            <mat-icon>edit</mat-icon>
+            <span>Editar</span>
+          </button>
+          <button mat-menu-item (click)="Remove(row)">
+            <mat-icon>delete</mat-icon>
+            <span>Eliminar</span>
+          </button>
+          <button mat-menu-item (click)="openInventoryModal(row)">
+            <mat-icon>info</mat-icon>
+            <span>Agregar unidades</span>
+          </button>
+        </mat-menu>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <!-- <mat-paginator #paginator [length]="length" [pageIndex]="0" [pageSize]="50"
+    [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator> -->
+</div>

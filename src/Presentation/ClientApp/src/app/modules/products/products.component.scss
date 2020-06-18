@@ -1,0 +1,34 @@
+.full-width-table {
+  width: 100%;
+}
+
+.search-full-width {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.button-width{
+  width: 10%;
+}
+
+.button-style{
+  margin-right: 10px;
+}
+
+.new-button-style{
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
