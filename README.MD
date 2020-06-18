@@ -1,4 +1,4 @@
-﻿﻿# Ferreteria App
+# Ferreteria App
 
 The purpose of this project is to manage products.
 
