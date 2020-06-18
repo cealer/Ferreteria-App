@@ -23,8 +23,8 @@ MySql
 ```
 
 ### Run Project
-
-* Run Angular in port 4200 from /Presentation/ClientApp.
+* npm install from /Presentation/ClientApp.
+* Run Angular(ng serve) in port 4200 from /Presentation/ClientApp.
 * Run .Net Core.
 
 ### License 📄
